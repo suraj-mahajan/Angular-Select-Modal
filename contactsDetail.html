@@ -1,0 +1,41 @@
+
+
+<div class="modal-header">
+    <h2>Contact Detail</h2>
+</div>
+<div class="modal-body">
+    <input type="search" ng-model="vm.search" placeholder="Search languages..." class="form-control">
+    <div>
+        <table class="table table-hover table-bordered">
+            <tr ng-repeat="item in contact | filter :vm.search" class="list-group-item"  >
+                <td>
+                    <a ng-click="selectLocale(item)" class="btn btn-default" >Select</a>
+                </td>
+                <td>
+                    <img ng-src="{{item.picture.thumbnail}}" />
+                </td>
+                <td>
+                    {{item.name.first}} {{item.name.last}}
+                </td>
+                
+                <td>
+                    {{item.cell}}
+                </td>
+                <td>
+                    {{item.phone}}
+                </td>
+                <td>
+                    {{item.gender}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="">
+        <div class="col-md-12">
+            <a href="JavaScript:void(0)" class="btn btn-default col-md-12" ng-click="LoadMore()"> Load More </a>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
